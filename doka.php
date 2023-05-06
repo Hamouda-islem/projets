@@ -3,7 +3,52 @@
 <head>
 	<title>Ma page de rendez-vous</title>
 	<style>
-        
+        :root {
+  --bg-color: #1f242d;
+  --second-bg-color: #323946;
+  --text-color: #fff;
+  --main-color: #0ef;
+}
+
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  color: var(--main-color);
+  text-align: center;
+  margin-top: 50;
+}
+
+.container {
+  background-color: var(--second-bg-color);
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 600px;
+  box-shadow: 0 0 10px rgba(0, 0,0.2);
+}
+
+p {
+  margin: 10px 0;
+}
+
+.print-button {
+  background-color: var(--main-color);
+  color: #fff;
+  border: none;
+  border-radius:5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.print-button:hover {
+  background-color: #0bd;
+}
     </style>
 </head>
 <body>
@@ -62,11 +107,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['ajouter'])) {
 
     if ($result) {
         if ($result['email'] == $email && $result['telephone'] == $telephone) {
-            echo 'Cet email et ce téléphone sont déjà utilisés.';
+            echo '<h1>Cet email et ce téléphone sont déjà utilisés </h1>';
         } elseif ($result['email'] == $email) {
-            echo 'Cet email est déjà utilisé.';
+            echo '<h1>Cet email est déjà utilisé.</h1>';
         } elseif ($result['telephone'] == $telephone) {
-            echo 'Ce téléphone est déjà utilisé.';
+            echo '<h1>Ce téléphone est déjà utilisé <h1>';
         }
     } else {
         // Génération d'un ID unique
@@ -123,7 +168,7 @@ while ($RDV === null) {
     
         if ($result) {
             // Affichage d'un message de confirmation
-            echo "<h2>Données enregistrées</h2>";
+            echo "<h1>Données enregistrées</h1>";
             echo "<p>Nom : " . $nom . "</p>";
             echo "<p>Prénom : " . $prenom . "</p>";
             echo "<p>Age : " . $age . "</p>";
