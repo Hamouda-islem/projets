@@ -212,8 +212,9 @@ if(isset($_POST['rechercherD2']))
  echo '</thead>';
  echo '<tbody>';
  foreach ($resultats as $row) {
+    
      echo '<tr>';
- 
+     echo "<h1>Résultats de la Recherche</h1>";
      echo '<td style="border: 1px solid black; padding: 5px;">' . $row['nom'] . '</td>';
      echo '<td style="border: 1px solid black; padding: 5px;">' . $row['prenom'] . '</td>';
      echo '<td style="border: 1px solid black; padding: 5px;">' . $row['age'] . '</td>';
